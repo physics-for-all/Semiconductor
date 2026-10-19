@@ -1,24 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Semiconductors — Materials, Physics & Applications</title>
 <meta name="description" content="Explore semiconductor physics, energy bands, doping, electrical and optical properties, and applications in solar cells, electronics, photonics and sensors.">
-<meta name="keywords" content="semiconductors, semiconductor physics, energy band gap, silicon, doping, p-type, n-type, solar cells, electronics">
-<meta name="author" content="Physics for All">
-<meta name="theme-color" content="#101c2c">
-
-<link rel="canonical" href="https://physics-for-all.github.io/moez-hajjis.github.io/semiconductors.html">
-
 <style>
 /* =====================================================
-   PHYSICS FOR ALL — SEMICONDUCTORS
-   Single-file editorial scientific website
+   PHYSICS FOR ALL — SEMICONDUCTORS (single file)
 ===================================================== */
-
 :root {
   --ink: #142238;
   --ink-light: #263950;
@@ -77,7 +67,6 @@ img, svg, canvas {
 }
 
 /* HEADER */
-
 .site-header {
   position: sticky;
   top: 0;
@@ -152,7 +141,6 @@ img, svg, canvas {
 }
 
 /* HERO */
-
 .hero {
   background: var(--ink);
   color: white;
@@ -266,8 +254,7 @@ img, svg, canvas {
   letter-spacing: .3px;
 }
 
-/* HERO SCIENTIFIC ILLUSTRATION */
-
+/* HERO VISUAL */
 .hero-visual {
   min-width: 0;
   position: relative;
@@ -335,7 +322,6 @@ img, svg, canvas {
 }
 
 /* FACT STRIP */
-
 .fact-strip {
   background: white;
   border-bottom: 1px solid var(--line);
@@ -371,7 +357,6 @@ img, svg, canvas {
 }
 
 /* GENERAL SECTION */
-
 .section {
   padding-block: 94px;
 }
@@ -421,7 +406,6 @@ img, svg, canvas {
 }
 
 /* DEFINITION */
-
 .definition-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -503,7 +487,6 @@ img, svg, canvas {
 }
 
 /* BAND GAP */
-
 .band-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -587,7 +570,6 @@ img, svg, canvas {
 }
 
 /* PROPERTIES */
-
 .property-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -638,7 +620,6 @@ img, svg, canvas {
 }
 
 /* DOPING */
-
 .doping-intro {
   max-width: 690px;
   margin-bottom: 35px;
@@ -701,7 +682,6 @@ img, svg, canvas {
 }
 
 /* INTERACTIVE GRAPH */
-
 .graph-layout {
   display: grid;
   grid-template-columns: .72fr 1.28fr;
@@ -789,7 +769,6 @@ img, svg, canvas {
 }
 
 /* APPLICATIONS */
-
 .application-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -832,7 +811,6 @@ img, svg, canvas {
 }
 
 /* COMPARISON TABLE */
-
 .table-wrap {
   overflow-x: auto;
   border: 1px solid var(--line);
@@ -875,7 +853,6 @@ tr:last-child td {
 }
 
 /* FAQ */
-
 .faq-list {
   border-top: 1px solid var(--line);
 }
@@ -919,7 +896,6 @@ tr:last-child td {
 }
 
 /* REFERENCES */
-
 .references {
   background: #ebe8df;
   padding: 27px;
@@ -950,7 +926,6 @@ tr:last-child td {
 }
 
 /* FOOTER */
-
 .site-footer {
   background: #0d1725;
   color: white;
@@ -1001,7 +976,6 @@ tr:last-child td {
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 900px) {
   .main-nav {
     gap: 13px;
@@ -1144,12 +1118,11 @@ tr:last-child td {
 }
 </style>
 </head>
-
 <body>
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="index.html" class="brand" aria-label="Physics for All homepage">
+    <a href="#" class="brand" aria-label="Physics for All homepage">
       <span class="brand-mark">Φ</span>
       <span>PHYSICS FOR ALL<small>SCIENCE · MATERIALS · ENERGY</small></span>
     </a>
@@ -1169,7 +1142,6 @@ tr:last-child td {
 <main>
 
 <!-- HERO -->
-
 <section class="hero">
   <div class="container hero-inner">
     <div>
@@ -1272,7 +1244,6 @@ tr:last-child td {
 </section>
 
 <!-- FACT STRIP -->
-
 <section class="fact-strip" aria-label="Semiconductor facts">
   <div class="container fact-grid">
     <div class="fact">
@@ -1295,7 +1266,6 @@ tr:last-child td {
 </section>
 
 <!-- 01 DEFINITION -->
-
 <section class="section" id="definition">
   <div class="container">
     <div class="section-top">
@@ -1372,7 +1342,6 @@ tr:last-child td {
 </section>
 
 <!-- 02 ENERGY BANDS -->
-
 <section class="section section-dark" id="energy-bands">
   <div class="container">
     <div class="section-top">
@@ -1390,913 +1359,4 @@ tr:last-child td {
     <div class="band-layout">
       <article class="band-card">
         <h3>Conduction and valence bands</h3>
-        <p>A simplified representation of semiconductor energy levels.</p>
-
-        <div class="band-canvas-wrap">
-          <canvas id="bandDiagram" class="band-canvas" width="520" height="340" role="img" aria-label="Energy band diagram showing valence band, conduction band and band gap"></canvas>
-        </div>
-
-        <div class="formula">E<sub>g</sub> = E<sub>c</sub> − E<sub>v</sub></div>
-
-        <p class="band-caption">
-          <strong>E<sub>g</sub></strong> is the band-gap energy. An electron must
-          acquire sufficient energy to move from the valence band to the
-          conduction band, leaving behind a hole.
-        </p>
-      </article>
-
-      <article class="band-card">
-        <h3>Why the gap matters</h3>
-        <p>The band gap influences electrical and optical behaviour.</p>
-
-        <div class="band-canvas-wrap">
-          <canvas id="materialBands" class="band-canvas" width="520" height="340" role="img" aria-label="Comparison of conductor, semiconductor and insulator energy bands"></canvas>
-        </div>
-
-        <p class="band-caption">
-          Conductors can have available electronic states at nearby energies.
-          Semiconductors have a moderate gap, while many insulators have a
-          substantially larger gap. These are simplified schematic diagrams.
-        </p>
-      </article>
-    </div>
-
-    <div class="band-facts">
-      <div class="band-fact">
-        <strong>0 eV*</strong>
-        <span>Metallic bands can overlap or be partially filled</span>
-      </div>
-      <div class="band-fact">
-        <strong>1.12 eV</strong>
-        <span>Silicon at approximately 300 K</span>
-      </div>
-      <div class="band-fact">
-        <strong>3.4 eV</strong>
-        <span>Gallium nitride, approximately</span>
-      </div>
-    </div>
-    <p class="band-caption">*A metal does not generally have a semiconductor-like forbidden gap at the Fermi level. Values depend on material and conditions.</p>
-  </div>
-</section>
-
-<!-- 03 PROPERTIES -->
-
-<section class="section section-white" id="properties">
-  <div class="container">
-    <div class="section-top">
-      <div>
-        <div class="section-number">03 — MATERIAL CHARACTERISTICS</div>
-        <h2>Properties that define performance.</h2>
-      </div>
-      <p class="section-intro">
-        Device performance depends on the interplay of electronic structure,
-        carrier transport, optical absorption and thermal behaviour.
-      </p>
-    </div>
-
-    <div class="property-grid">
-      <article class="property-card">
-        <span class="property-index">01 / ELECTRICAL</span>
-        <h3>Electrical conductivity</h3>
-        <p>
-          Conductivity depends on both the concentration and mobility of
-          electrons and holes. Doping can change carrier concentration by
-          several orders of magnitude.
-        </p>
-        <span class="property-tag">Charge transport</span>
-      </article>
-
-      <article class="property-card">
-        <span class="property-index">02 / ELECTRONIC</span>
-        <h3>Energy band gap</h3>
-        <p>
-          The band gap determines the minimum energy for band-to-band
-          excitation and strongly influences absorption, emission and
-          intrinsic carrier concentration.
-        </p>
-        <span class="property-tag">Electronic structure</span>
-      </article>
-
-      <article class="property-card">
-        <span class="property-index">03 / OPTICAL</span>
-        <h3>Light absorption</h3>
-        <p>
-          Photons with suitable energy can excite electrons across the gap.
-          The absorption spectrum depends on the band structure and whether
-          transitions are direct or indirect.
-        </p>
-        <span class="property-tag">Photon interaction</span>
-      </article>
-
-      <article class="property-card">
-        <span class="property-index">04 / THERMAL</span>
-        <h3>Temperature dependence</h3>
-        <p>
-          Heating a semiconductor generally increases its intrinsic carrier
-          concentration. Its conductivity can therefore rise with temperature,
-          unlike the usual behaviour of metallic conductors.
-        </p>
-        <span class="property-tag">Thermal excitation</span>
-      </article>
-
-      <article class="property-card">
-        <span class="property-index">05 / TRANSPORT</span>
-        <h3>Electron and hole mobility</h3>
-        <p>
-          Mobility describes carrier drift under an electric field. It is
-          affected by effective mass, lattice vibrations, defects, impurities
-          and interfaces.
-        </p>
-        <span class="property-tag">Carrier mobility</span>
-      </article>
-
-      <article class="property-card">
-        <span class="property-index">06 / MATERIALS</span>
-        <h3>Junction formation</h3>
-        <p>
-          Combining p-type and n-type regions creates a p–n junction.
-          Its depletion region and built-in electric field enable rectification
-          and are fundamental to many optoelectronic devices.
-        </p>
-        <span class="property-tag">Device engineering</span>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- 04 DOPING -->
-
-<section class="section section-dark" id="doping">
-  <div class="container">
-    <div class="doping-intro">
-      <div class="section-number">04 — CONTROL THROUGH DOPING</div>
-      <h2>Engineering the charge carriers.</h2>
-      <p>
-        Doping introduces small, controlled concentrations of impurity atoms
-        into a semiconductor. The dopants change the carrier concentration
-        without changing the basic identity of the host material.
-      </p>
-    </div>
-
-    <div class="doping-grid">
-      <article class="doping-card">
-        <div class="doping-label">Type 01 / Donor doping</div>
-        <h3>n-type semiconductor</h3>
-        <p>
-          Donor impurities provide electrons that can be excited into
-          conducting states. In silicon, phosphorus is a common donor.
-        </p>
-
-        <svg class="doping-art" viewBox="0 0 460 205" role="img" aria-label="Schematic silicon lattice with a donor impurity and an extra electron">
-          <g stroke="#48617b" stroke-width="1.5">
-            <path d="M75 55 L170 55 L265 55 L360 55 M75 105 L170 105 L265 105 L360 105 M75 155 L170 155 L265 155 L360 155"/>
-            <path d="M75 55 L75 105 L75 155 M170 55 L170 105 L170 155 M265 55 L265 105 L265 155 M360 55 L360 105 L360 155"/>
-            <path d="M75 55 L170 105 L265 55 L360 105 M75 155 L170 105 L265 155 L360 105"/>
-          </g>
-          <g fill="#6797c6" stroke="#a8c7e5" stroke-width="1.5">
-            <circle cx="75" cy="55" r="11"/><circle cx="170" cy="55" r="11"/>
-            <circle cx="265" cy="55" r="11"/><circle cx="360" cy="55" r="11"/>
-            <circle cx="75" cy="105" r="11"/><circle cx="170" cy="105" r="11"/>
-            <circle cx="360" cy="105" r="11"/>
-            <circle cx="75" cy="155" r="11"/><circle cx="170" cy="155" r="11"/>
-            <circle cx="265" cy="155" r="11"/><circle cx="360" cy="155" r="11"/>
-          </g>
-          <circle cx="265" cy="105" r="13" fill="#e47743" stroke="#ffc19f" stroke-width="2"/>
-          <circle cx="300" cy="83" r="5" fill="#f4bd91"/>
-          <path d="M278 98 L294 87" stroke="#f4bd91" stroke-width="1.5" stroke-dasharray="3 3"/>
-          <g fill="#e8edf3" font-size="10" font-family="Arial">
-            <text x="265" y="109" text-anchor="middle" fill="#fff">P</text>
-            <text x="310" y="76">Extra e⁻</text>
-            <text x="18" y="193">Schematic lattice — not to scale</text>
-          </g>
-        </svg>
-
-        <div class="doping-bottom">
-          Majority carriers: <strong>electrons</strong><br>
-          Example: silicon doped with phosphorus.
-        </div>
-      </article>
-
-      <article class="doping-card">
-        <div class="doping-label">Type 02 / Acceptor doping</div>
-        <h3>p-type semiconductor</h3>
-        <p>
-          Acceptor impurities create available states that facilitate hole
-          formation. In silicon, boron is a common acceptor.
-        </p>
-
-        <svg class="doping-art" viewBox="0 0 460 205" role="img" aria-label="Schematic silicon lattice with an acceptor impurity and a hole">
-          <g stroke="#48617b" stroke-width="1.5">
-            <path d="M75 55 L170 55 L265 55 L360 55 M75 105 L170 105 L265 105 L360 105 M75 155 L170 155 L265 155 L360 155"/>
-            <path d="M75 55 L75 105 L75 155 M170 55 L170 105 L170 155 M265 55 L265 105 L265 155 M360 55 L360 105 L360 155"/>
-            <path d="M75 55 L170 105 L265 55 L360 105 M75 155 L170 105 L265 155 L360 105"/>
-          </g>
-          <g fill="#6797c6" stroke="#a8c7e5" stroke-width="1.5">
-            <circle cx="75" cy="55" r="11"/><circle cx="170" cy="55" r="11"/>
-            <circle cx="265" cy="55" r="11"/><circle cx="360" cy="55" r="11"/>
-            <circle cx="75" cy="105" r="11"/><circle cx="170" cy="105" r="11"/>
-            <circle cx="360" cy="105" r="11"/>
-            <circle cx="75" cy="155" r="11"/><circle cx="170" cy="155" r="11"/>
-            <circle cx="265" cy="155" r="11"/><circle cx="360" cy="155" r="11"/>
-          </g>
-          <circle cx="265" cy="105" r="13" fill="#e47743" stroke="#ffc19f" stroke-width="2"/>
-          <circle cx="300" cy="83" r="7" fill="none" stroke="#f4bd91" stroke-width="2"/>
-          <path d="M278 98 L294 87" stroke="#f4bd91" stroke-width="1.5" stroke-dasharray="3 3"/>
-          <g fill="#e8edf3" font-size="10" font-family="Arial">
-            <text x="265" y="109" text-anchor="middle" fill="#fff">B</text>
-            <text x="311" y="76">Hole (h⁺)</text>
-            <text x="18" y="193">Schematic lattice — not to scale</text>
-          </g>
-        </svg>
-
-        <div class="doping-bottom">
-          Majority carriers: <strong>holes</strong><br>
-          Example: silicon doped with boron.
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- 05 GRAPH -->
-
-<section class="section section-white" id="temperature">
-  <div class="container">
-    <div class="section-top">
-      <div>
-        <div class="section-number">05 — INTERACTIVE PHYSICS</div>
-        <h2>Temperature and conductivity.</h2>
-      </div>
-      <p class="section-intro">
-        Explore a simplified model of how temperature influences intrinsic
-        semiconductor conductivity. The curve is illustrative, not experimental
-        data for a specific sample.
-      </p>
-    </div>
-
-    <div class="graph-layout">
-      <div class="graph-copy">
-        <h3 style="font-family:Georgia,serif;font-size:27px;font-weight:400;">What happens when a semiconductor is heated?</h3>
-
-        <p>
-          Thermal excitation creates electron–hole pairs. In an intrinsic
-          semiconductor, the carrier concentration rises strongly with
-          temperature, often dominating the effect of reduced carrier mobility.
-        </p>
-
-        <p>
-          The approximate intrinsic carrier concentration follows
-          a relationship of the form
-          <strong>nᵢ ∝ T<sup>3/2</sup> exp(−E<sub>g</sub>/2k<sub>B</sub>T)</strong>,
-          when the band gap is treated as constant over the range considered.
-        </p>
-
-        <div class="graph-controls">
-          <label for="materialSelect">Illustrative band-gap model</label>
-          <select id="materialSelect">
-            <option value="0.66">Germanium — Eg = 0.66 eV</option>
-            <option value="1.12" selected>Silicon — Eg = 1.12 eV</option>
-            <option value="1.42">Gallium arsenide — Eg = 1.42 eV</option>
-          </select>
-          <button id="updateGraph" type="button">Update graph ↗</button>
-        </div>
-      </div>
-
-      <div class="graph-frame">
-        <div class="graph-title">
-          <h3>Relative intrinsic carrier concentration</h3>
-          <span>Normalised model</span>
-        </div>
-
-        <canvas id="temperatureGraph" class="graph-canvas" width="760" height="460" role="img" aria-label="Interactive graph of normalised intrinsic carrier concentration against temperature"></canvas>
-
-        <div class="graph-note">
-          Horizontal axis: temperature (K). Vertical axis: relative intrinsic
-          carrier concentration, normalised to the model value at 300 K.
-          The model assumes a constant band gap and omits material-specific
-          density-of-states prefactors.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 06 APPLICATIONS -->
-
-<section class="section" id="applications">
-  <div class="container">
-    <div class="section-top">
-      <div>
-        <div class="section-number">06 — TECHNOLOGY & SOCIETY</div>
-        <h2>Where semiconductors make a difference.</h2>
-      </div>
-      <p class="section-intro">
-        By controlling the flow of charge and the interaction of light with
-        matter, semiconductor devices underpin energy, communication,
-        computing and measurement.
-      </p>
-    </div>
-
-    <div class="application-grid">
-      <article class="application">
-        <span class="application-number">APPLICATION / 01</span>
-        <h3>Solar cells</h3>
-        <p>
-          Photons generate electron–hole pairs. A built-in electric field
-          separates charge carriers, producing electrical power from sunlight.
-        </p>
-        <span class="material">Silicon · CdTe · CIGS · Perovskites</span>
-      </article>
-
-      <article class="application">
-        <span class="application-number">APPLICATION / 02</span>
-        <h3>Transistors & computing</h3>
-        <p>
-          Transistors control electrical current and act as switches or
-          amplifiers. Billions of these devices can be integrated into a chip.
-        </p>
-        <span class="material">Silicon · SiGe · GaN</span>
-      </article>
-
-      <article class="application">
-        <span class="application-number">APPLICATION / 03</span>
-        <h3>LEDs & photonics</h3>
-        <p>
-          Electron–hole recombination can emit photons. Band-gap engineering
-          allows devices to produce light across different spectral ranges.
-        </p>
-        <span class="material">GaN · GaAs · InGaN</span>
-      </article>
-
-      <article class="application">
-        <span class="application-number">APPLICATION / 04</span>
-        <h3>Electronic sensors</h3>
-        <p>
-          Changes in light, temperature, gas concentration or pressure can
-          alter a semiconductor's electrical response, enabling detection.
-        </p>
-        <span class="material">Metal oxides · Si · Compound semiconductors</span>
-      </article>
-
-      <article class="application">
-        <span class="application-number">APPLICATION / 05</span>
-        <h3>Power electronics</h3>
-        <p>
-          Semiconductor switches convert and regulate electrical energy in
-          electric vehicles, chargers, motor drives and renewable-energy systems.
-        </p>
-        <span class="material">SiC · GaN · Silicon</span>
-      </article>
-
-      <article class="application">
-        <span class="application-number">APPLICATION / 06</span>
-        <h3>Communication & imaging</h3>
-        <p>
-          Photodetectors convert light into electrical signals for optical
-          communication, cameras, scientific instruments and medical imaging.
-        </p>
-        <span class="material">InGaAs · Silicon · HgCdTe</span>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- MATERIAL COMPARISON -->
-
-<section class="section section-white" id="materials">
-  <div class="container">
-    <div class="section-top">
-      <div>
-        <div class="section-number">REFERENCE / MATERIALS</div>
-        <h2>A closer look at key materials.</h2>
-      </div>
-      <p class="section-intro">
-        No single semiconductor is best for every application. Band gap,
-        mobility, cost, processing and operating conditions all matter.
-      </p>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Material</th>
-            <th>Band gap, approx.</th>
-            <th>Gap type</th>
-            <th>Common applications</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Silicon (Si)</td>
-            <td>1.12 eV</td>
-            <td>Indirect</td>
-            <td>Integrated circuits, solar cells, sensors</td>
-          </tr>
-          <tr>
-            <td>Germanium (Ge)</td>
-            <td>0.66 eV</td>
-            <td>Indirect</td>
-            <td>Infrared optics, detectors, SiGe devices</td>
-          </tr>
-          <tr>
-            <td>Gallium arsenide (GaAs)</td>
-            <td>1.42 eV</td>
-            <td>Direct</td>
-            <td>Optoelectronics, RF devices, solar cells</td>
-          </tr>
-          <tr>
-            <td>Gallium nitride (GaN)</td>
-            <td>3.4 eV</td>
-            <td>Direct</td>
-            <td>Blue LEDs, high-power and high-frequency electronics</td>
-          </tr>
-          <tr>
-            <td>Silicon carbide (4H-SiC)</td>
-            <td>3.26 eV</td>
-            <td>Indirect</td>
-            <td>High-voltage and high-temperature power devices</td>
-          </tr>
-          <tr>
-            <td>Cadmium telluride (CdTe)</td>
-            <td>1.45 eV</td>
-            <td>Direct</td>
-            <td>Thin-film photovoltaic modules</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p style="margin-top:14px;color:#778397;font-size:11px;">
-      Approximate room-temperature values; actual properties depend on
-      composition, crystal structure, temperature and measurement conditions.
-    </p>
-  </div>
-</section>
-
-<!-- FAQ -->
-
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-top">
-      <div>
-        <div class="section-number">QUESTIONS & ANSWERS</div>
-        <h2>Semiconductor essentials.</h2>
-      </div>
-      <p class="section-intro">
-        Concise explanations of the concepts most frequently encountered
-        when studying semiconductor physics.
-      </p>
-    </div>
-
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>Why is silicon widely used in electronics?</summary>
-        <div class="faq-answer">
-          Silicon is abundant, has a useful band gap, and forms a stable
-          native oxide (SiO₂). Its mature manufacturing processes make it
-          particularly suitable for integrated circuits and many photovoltaic
-          devices.
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>What is the difference between electrons and holes?</summary>
-        <div class="faq-answer">
-          An electron is a negatively charged carrier. A hole is the effective
-          positive charge associated with a missing electron in an otherwise
-          occupied electronic state. Both can contribute to electrical current.
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Why does semiconductor conductivity often increase with temperature?</summary>
-        <div class="faq-answer">
-          Higher temperature can generate more electron–hole pairs. In intrinsic
-          semiconductors, this increase in carrier concentration often outweighs
-          the reduction in mobility caused by increased lattice scattering.
-          The behaviour of a doped semiconductor depends on its temperature
-          regime and doping level.
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>What is a p–n junction?</summary>
-        <div class="faq-answer">
-          It is the interface between p-type and n-type semiconductor regions.
-          Carrier diffusion and recombination establish a depletion region and
-          built-in electric potential. The junction's response to applied
-          voltage is central to diodes, solar cells and many other devices.
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>How does a semiconductor solar cell generate electricity?</summary>
-        <div class="faq-answer">
-          Absorbed photons with sufficient energy create electron–hole pairs.
-          The device structure separates the carriers, and contacts collect
-          them to deliver current to an external circuit. Real performance
-          depends on absorption, recombination, transport and contact losses.
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>What is the difference between direct and indirect band gaps?</summary>
-        <div class="faq-answer">
-          In a direct-gap semiconductor, the conduction-band minimum and
-          valence-band maximum occur at the same crystal momentum. Radiative
-          transitions can therefore occur efficiently without a phonon.
-          In an indirect-gap semiconductor, momentum conservation generally
-          requires phonon participation, making light emission less efficient.
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- REFERENCES -->
-
-<section class="section section-white" id="references">
-  <div class="container">
-    <div class="references">
-      <h3>Further reading & scientific references</h3>
-      <ol>
-        <li>
-          S. M. Sze and K. K. Ng,
-          <em>Physics of Semiconductor Devices</em>, 3rd edition,
-          Wiley, 2006.
-        </li>
-        <li>
-          B. G. Streetman and S. Banerjee,
-          <em>Solid State Electronic Devices</em>, Pearson.
-        </li>
-        <li>
-          C. Kittel, <em>Introduction to Solid State Physics</em>, Wiley.
-        </li>
-        <li>
-          <a href="https://www.nist.gov/" target="_blank" rel="noopener noreferrer">National Institute of Standards and Technology (NIST)</a>
-          — materials and measurement resources.
-        </li>
-        <li>
-          <a href="https://www.energy.gov/eere/solar/solar-photovoltaic-technology-basics" target="_blank" rel="noopener noreferrer">U.S. Department of Energy — Solar Photovoltaic Technology Basics</a>.
-        </li>
-        <li>
-          <a href="https://www.ioffe.ru/SVA/NSM/Semicond/" target="_blank" rel="noopener noreferrer">Ioffe Institute — Semiconductor material parameters</a>.
-        </li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <div class="footer-title">Physics for All.</div>
-      <p>Making the physics of materials understandable.</p>
-      <p>© <span id="year"></span> Physics for All · Educational resource</p>
-    </div>
-
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="index.html">Home</a>
-      <a href="#definition">Fundamentals</a>
-      <a href="#applications">Applications</a>
-      <a href="#references">References</a>
-    </nav>
-  </div>
-</footer>
-
-<button class="back-top" id="backTop" aria-label="Back to top" title="Back to top">↑</button>
-
-<script>
-/* =====================================================
-   SEMICONDUCTOR SCIENCE — INTERACTIVE DIAGRAMS
-===================================================== */
-
-"use strict";
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-const backTop = document.getElementById("backTop");
-
-backTop.addEventListener("click", function () {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-window.addEventListener("scroll", function () {
-  backTop.style.display = window.scrollY > 400 ? "block" : "none";
-});
-
-backTop.style.display = "none";
-
-/* ENERGY BAND DIAGRAM */
-
-function drawBandDiagram() {
-  const canvas = document.getElementById("bandDiagram");
-  const ctx = canvas.getContext("2d");
-  const w = canvas.width;
-  const h = canvas.height;
-
-  ctx.clearRect(0, 0, w, h);
-  ctx.fillStyle = "#101c2c";
-  ctx.fillRect(0, 0, w, h);
-
-  ctx.strokeStyle = "#354960";
-  ctx.lineWidth = 1;
-
-  for (let y = 35; y < h - 25; y += 35) {
-    ctx.beginPath();
-    ctx.moveTo(55, y);
-    ctx.lineTo(w - 15, y);
-    ctx.stroke();
-  }
-
-  const left = 92;
-  const right = w - 35;
-  const top = 48;
-  const conductionY = 95;
-  const valenceY = 248;
-
-  ctx.fillStyle = "#426c98";
-  ctx.fillRect(left, top, right - left, conductionY - top);
-
-  ctx.fillStyle = "#a95d3b";
-  ctx.fillRect(left, valenceY, right - left, 45);
-
-  ctx.fillStyle = "#dce5ee";
-  ctx.font = "15px Arial";
-  ctx.fillText("Conduction band", left + 8, 77);
-  ctx.fillText("Valence band", left + 8, valenceY + 28);
-
-  ctx.strokeStyle = "#f1a17a";
-  ctx.lineWidth = 2;
-  ctx.setLineDash([5, 4]);
-  ctx.beginPath();
-  ctx.moveTo(left, conductionY + 2);
-  ctx.lineTo(right, conductionY + 2);
-  ctx.moveTo(left, valenceY - 3);
-  ctx.lineTo(right, valenceY - 3);
-  ctx.stroke();
-  ctx.setLineDash([]);
-
-  ctx.strokeStyle = "#f1a17a";
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.moveTo(w - 65, conductionY + 9);
-  ctx.lineTo(w - 65, valenceY - 10);
-  ctx.moveTo(w - 72, conductionY + 17);
-  ctx.lineTo(w - 65, conductionY + 9);
-  ctx.lineTo(w - 58, conductionY + 17);
-  ctx.moveTo(w - 72, valenceY - 18);
-  ctx.lineTo(w - 65, valenceY - 10);
-  ctx.lineTo(w - 58, valenceY - 18);
-  ctx.stroke();
-
-  ctx.fillStyle = "#f1a17a";
-  ctx.font = "bold 17px Georgia";
-  ctx.fillText("Eg", w - 58, 174);
-
-  ctx.fillStyle = "#b5c5d7";
-  ctx.font = "12px Arial";
-  ctx.save();
-  ctx.translate(25, h / 2);
-  ctx.rotate(-Math.PI / 2);
-  ctx.textAlign = "center";
-  ctx.fillText("ENERGY", 0, 0);
-  ctx.restore();
-
-  ctx.fillStyle = "#c4d0dd";
-  ctx.font = "11px Arial";
-  ctx.fillText("Higher energy", left, 27);
-  ctx.fillText("Lower energy", left, h - 13);
-
-  // Electron and hole illustrations
-  ctx.fillStyle = "#91b8df";
-  ctx.beginPath();
-  ctx.arc(left + 75, conductionY + 22, 6, 0, Math.PI * 2);
-  ctx.fill();
-
-  ctx.fillStyle = "#f4b18a";
-  ctx.beginPath();
-  ctx.arc(left + 75, valenceY - 14, 6, 0, Math.PI * 2);
-  ctx.fill();
-
-  ctx.fillStyle = "#b5c5d7";
-  ctx.font = "10px Arial";
-  ctx.fillText("Electron", left + 88, conductionY + 26);
-  ctx.fillText("Hole", left + 88, valenceY - 10);
-}
-
-/* COMPARISON OF MATERIAL BANDS */
-
-function drawMaterialBands() {
-  const canvas = document.getElementById("materialBands");
-  const ctx = canvas.getContext("2d");
-  const w = canvas.width;
-  const h = canvas.height;
-
-  ctx.clearRect(0, 0, w, h);
-  ctx.fillStyle = "#101c2c";
-  ctx.fillRect(0, 0, w, h);
-
-  const panels = [
-    { x: 12, title: "METAL", gap: 0 },
-    { x: 182, title: "SEMICONDUCTOR", gap: 48 },
-    { x: 352, title: "INSULATOR", gap: 94 }
-  ];
-
-  panels.forEach(function (p) {
-    const pw = 155;
-    const base = 235;
-    const bandHeight = 42;
-
-    ctx.fillStyle = "#cbd7e4";
-    ctx.font = "bold 10px Arial";
-    ctx.textAlign = "center";
-    ctx.fillText(p.title, p.x + pw / 2, 28);
-
-    ctx.fillStyle = "#426c98";
-    ctx.fillRect(p.x + 15, 65, pw - 30, bandHeight);
-
-    ctx.fillStyle = "#a95d3b";
-    ctx.fillRect(p.x + 15, base, pw - 30, bandHeight);
-
-    ctx.fillStyle = "#dce5ee";
-    ctx.font = "10px Arial";
-    ctx.fillText("Conduction", p.x + pw / 2, 90);
-    ctx.fillText("Valence", p.x + pw / 2, base + 25);
-
-    if (p.gap === 0) {
-      ctx.fillStyle = "#a95d3b";
-      ctx.fillRect(p.x + 15, 107, pw - 30, 25);
-      ctx.fillStyle = "#dce5ee";
-      ctx.fillText("Overlap / partial filling", p.x + pw / 2, 122);
-    } else {
-      ctx.strokeStyle = "#f1a17a";
-      ctx.lineWidth = 1.5;
-      ctx.setLineDash([4, 3]);
-      ctx.beginPath();
-      ctx.moveTo(p.x + 15, 108);
-      ctx.lineTo(p.x + pw - 15, 108);
-      ctx.moveTo(p.x + 15, base - 1);
-      ctx.lineTo(p.x + pw - 15, base - 1);
-      ctx.stroke();
-      ctx.setLineDash([]);
-
-      ctx.fillStyle = "#f1a17a";
-      ctx.font = "bold 11px Arial";
-      ctx.fillText("Eg", p.x + pw / 2, (base + 108) / 2 + 4);
-    }
-
-    ctx.fillStyle = "#9eafc2";
-    ctx.font = "10px Arial";
-    ctx.fillText(
-      p.gap === 0 ? "Available states" :
-      p.gap === 48 ? "Moderate gap" : "Large gap",
-      p.x + pw / 2, 320
-    );
-  });
-
-  ctx.textAlign = "left";
-}
-
-/* TEMPERATURE GRAPH */
-
-function drawTemperatureGraph() {
-  const canvas = document.getElementById("temperatureGraph");
-  const ctx = canvas.getContext("2d");
-  const eg = Number(document.getElementById("materialSelect").value);
-
-  const w = canvas.width;
-  const h = canvas.height;
-  const margin = { left: 82, right: 25, top: 40, bottom: 65 };
-
-  const plotW = w - margin.left - margin.right;
-  const plotH = h - margin.top - margin.bottom;
-
-  ctx.clearRect(0, 0, w, h);
-  ctx.fillStyle = "#ffffff";
-  ctx.fillRect(0, 0, w, h);
-
-  const Tmin = 200;
-  const Tmax = 600;
-  const ymin = -8;
-  const ymax = 8;
-
-  function model(T) {
-    const kB = 8.617333262e-5;
-    const ratio =
-      Math.pow(T / 300, 1.5) *
-      Math.exp((-eg / (2 * kB)) * (1 / T - 1 / 300));
-
-    return Math.log10(ratio);
-  }
-
-  function xScale(T) {
-    return margin.left + ((T - Tmin) / (Tmax - Tmin)) * plotW;
-  }
-
-  function yScale(logVal) {
-    return margin.top + ((ymax - logVal) / (ymax - ymin)) * plotH;
-  }
-
-  // Grid and labels
-  ctx.strokeStyle = "#e5e9ed";
-  ctx.lineWidth = 1;
-  ctx.fillStyle = "#68778a";
-  ctx.font = "12px Arial";
-
-  for (let v = ymin; v <= ymax; v += 2) {
-    const y = yScale(v);
-    ctx.beginPath();
-    ctx.moveTo(margin.left, y);
-    ctx.lineTo(w - margin.right, y);
-    ctx.stroke();
-
-    ctx.textAlign = "right";
-    ctx.fillText(v.toString(), margin.left - 12, y + 4);
-  }
-
-  for (let T = 200; T <= 600; T += 50) {
-    const x = xScale(T);
-    ctx.beginPath();
-    ctx.moveTo(x, margin.top);
-    ctx.lineTo(x, h - margin.bottom);
-    ctx.stroke();
-
-    if (T % 100 === 0) {
-      ctx.textAlign = "center";
-      ctx.fillText(T.toString(), x, h - margin.bottom + 22);
-    }
-  }
-
-  // Model curve
-  ctx.beginPath();
-  ctx.strokeStyle = "#e47743";
-  ctx.lineWidth = 3;
-
-  for (let T = Tmin; T <= Tmax; T += 2) {
-    const x = xScale(T);
-    const y = yScale(Math.max(ymin, Math.min(ymax, model(T))));
-
-    if (T === Tmin) {
-      ctx.moveTo(x, y);
-    } else {
-      ctx.lineTo(x, y);
-    }
-  }
-
-  ctx.stroke();
-
-  // Normalisation point at 300 K
-  const x300 = xScale(300);
-  const y300 = yScale(0);
-
-  ctx.fillStyle = "#142238";
-  ctx.beginPath();
-  ctx.arc(x300, y300, 5, 0, Math.PI * 2);
-  ctx.fill();
-
-  ctx.fillStyle = "#142238";
-  ctx.font = "bold 12px Arial";
-  ctx.textAlign = "left";
-  ctx.fillText("300 K = 1", x300 + 10, y300 - 12);
-
-  // Axis labels
-  ctx.fillStyle = "#334359";
-  ctx.font = "13px Arial";
-  ctx.textAlign = "center";
-  ctx.fillText("Temperature (K)", margin.left + plotW / 2, h - 15);
-
-  ctx.save();
-  ctx.translate(20, margin.top + plotH / 2);
-  ctx.rotate(-Math.PI / 2);
-  ctx.textAlign = "center";
-  ctx.fillText("log₁₀(relative carrier concentration)", 0, 0);
-  ctx.restore();
-
-  // Model details
-  ctx.fillStyle = "#68778a";
-  ctx.font = "11px Arial";
-  ctx.textAlign = "left";
-  ctx.fillText("Illustrative constant-gap model", margin.left, 20);
-}
-
-document.getElementById("updateGraph").addEventListener("click", drawTemperatureGraph);
-document.getElementById("materialSelect").addEventListener("change", drawTemperatureGraph);
-
-drawBandDiagram();
-drawMaterialBands();
-drawTemperatureGraph();
-
-/* Redraw canvases when their layout changes */
-window.addEventListener("resize", function () {
-  drawBandDiagram();
-  drawMaterialBands();
-  drawTemperatureGraph();
-});
-</script>
-
-</body>
-</html>
+       
