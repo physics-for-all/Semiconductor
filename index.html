@@ -3,26 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Semiconductors — Materials, Physics & Applications</title>
-<meta name="description" content="Explore semiconductor physics, energy bands, doping, electrical and optical properties, and applications in solar cells, electronics, photonics and sensors.">
+<title>Semiconductors — Materials & Physics</title>
+<meta name="description" content="An academic exploration of semiconductor physics, energy bands, doping, and applications.">
+
 <style>
 /* =====================================================
-   PHYSICS FOR ALL — SEMICONDUCTORS (single file)
+   EDITORIAL ACADEMIC DESIGN — HAND-CRAFTED FEEL
 ===================================================== */
 :root {
-  --ink: #142238;
-  --ink-light: #263950;
-  --paper: #f5f3ed;
-  --white: #ffffff;
-  --muted: #778397;
-  --line: #dce1e5;
-  --orange: #e47743;
-  --orange-light: #f8e4d8;
-  --blue: #5f91c8;
-  --green: #5d947f;
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: Arial, Helvetica, sans-serif;
-  --max: 1200px;
+  --paper: #f9f8f6;      /* Warm, off-white journal paper */
+  --ink: #1a1a1a;        /* Near-black ink */
+  --muted: #6b6b6b;      /* Soft grey for captions */
+  --accent: #983b23;     /* Rust/burgundy for emphasis */
+  --rule: #d1cdc7;       /* Thin academic rules */
+  --serif: "Georgia", "Times New Roman", serif;
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "Courier New", Courier, monospace;
 }
 
 * {
@@ -31,1332 +27,780 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
-}
-
 body {
-  background: var(--paper);
+  background-color: var(--paper);
   color: var(--ink);
-  font-family: var(--sans);
-  line-height: 1.7;
+  font-family: var(--serif);
+  line-height: 1.65;
+  font-size: 17px;
   -webkit-font-smoothing: antialiased;
 }
 
+/* Typography */
+h1, h2, h3, h4 {
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+p {
+  margin-bottom: 1.2rem;
+}
+
 a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button, select, input {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-img, svg, canvas {
-  max-width: 100%;
-}
-
-.container {
-  width: min(var(--max), calc(100% - 48px));
-  margin-inline: auto;
-}
-
-/* HEADER */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(16, 28, 44, .97);
-  color: white;
-  border-bottom: 1px solid rgba(255,255,255,.12);
-  backdrop-filter: blur(14px);
-}
-
-.header-inner {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 13px;
-  letter-spacing: 2px;
-  font-weight: 800;
-  white-space: nowrap;
-}
-
-.brand-mark {
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  background: var(--orange);
-  color: white;
-  font-family: var(--serif);
-  font-size: 21px;
-  border-radius: 3px;
-}
-
-.brand small {
-  display: block;
-  font-size: 9px;
-  letter-spacing: 3px;
-  color: #b9c3d1;
-  font-weight: 400;
-}
-
-.main-nav {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
-
-.main-nav a {
-  font-size: 12px;
-  color: #c4cedb;
-  transition: color .2s;
-}
-
-.main-nav a:hover {
-  color: #fff;
-}
-
-.header-label {
-  border: 1px solid #536174;
-  padding: 8px 12px;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #e4e8ed;
-}
-
-/* HERO */
-.hero {
-  background: var(--ink);
-  color: white;
-  overflow: hidden;
-  position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: linear-gradient(to right, black, transparent 95%);
-  pointer-events: none;
-}
-
-.hero-inner {
-  min-height: 550px;
-  padding-block: 80px;
-  display: grid;
-  grid-template-columns: 1.08fr .92fr;
-  gap: 50px;
-  align-items: center;
-  position: relative;
-}
-
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: var(--orange);
-}
-
-.eyebrow::before {
-  content: "";
-  width: 26px;
-  height: 2px;
-  background: var(--orange);
-}
-
-.hero h1 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(46px, 6.5vw, 82px);
-  letter-spacing: -3px;
-  line-height: 1.02;
-  margin: 26px 0;
-  max-width: 620px;
-}
-
-.hero h1 em {
-  color: #e9986f;
-  font-weight: 400;
-}
-
-.hero-copy {
-  max-width: 530px;
-  color: #bac5d3;
-  font-size: 15px;
-  line-height: 1.95;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 32px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 13px 19px;
-  border: 1px solid transparent;
-  font-size: 12px;
-  font-weight: 700;
-  transition: transform .2s, background .2s;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: var(--orange);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #f08a55;
-}
-
-.btn-outline {
-  color: white;
-  border-color: #566476;
-}
-
-.hero-note {
-  margin-top: 25px;
-  color: #8998aa;
-  font-size: 11px;
-  letter-spacing: .3px;
-}
-
-/* HERO VISUAL */
-.hero-visual {
-  min-width: 0;
-  position: relative;
-}
-
-.visual-frame {
-  background: #17283d;
-  border: 1px solid #3b4a5e;
-  padding: 22px;
-  position: relative;
-}
-
-.visual-heading {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: center;
-  color: #dce5ee;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.visual-heading span:last-child {
-  color: #93a3b5;
-  font-size: 9px;
-}
-
-.atom-art {
-  display: block;
-  width: 100%;
-  margin-block: 15px;
-}
-
-.visual-footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  border-top: 1px solid #3b4a5e;
-  padding-top: 16px;
-}
-
-.visual-footer strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 25px;
-  font-weight: 400;
-  color: white;
-}
-
-.visual-footer small {
-  font-size: 10px;
-  color: #9eacbd;
-}
-
-.hero-index {
-  position: absolute;
-  right: -14px;
-  bottom: -22px;
-  background: var(--orange);
-  color: white;
-  padding: 12px 17px;
-  font-family: var(--serif);
-  font-size: 21px;
-}
-
-/* FACT STRIP */
-.fact-strip {
-  background: white;
-  border-bottom: 1px solid var(--line);
-}
-
-.fact-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.fact {
-  padding: 25px 22px;
-  border-right: 1px solid var(--line);
-}
-
-.fact:first-child {
-  border-left: 1px solid var(--line);
-}
-
-.fact strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 27px;
-  font-weight: 400;
-  line-height: 1.3;
-}
-
-.fact span {
-  color: var(--muted);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* GENERAL SECTION */
-.section {
-  padding-block: 94px;
-}
-
-.section-white {
-  background: white;
-}
-
-.section-dark {
-  background: var(--ink);
-  color: white;
-}
-
-.section-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 35px;
-  margin-bottom: 42px;
-}
-
-.section-number {
-  color: var(--orange);
-  font-size: 11px;
-  letter-spacing: 2px;
-  font-weight: 700;
-}
-
-.section h2 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(34px, 4.4vw, 52px);
-  letter-spacing: -1.3px;
-  line-height: 1.15;
-  margin-top: 12px;
-}
-
-.section-intro {
-  max-width: 450px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.9;
-}
-
-.section-dark .section-intro {
-  color: #b0bdcc;
-}
-
-/* DEFINITION */
-.definition-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 65px;
-  align-items: start;
-}
-
-.definition-text p {
-  color: #56657a;
-  font-size: 14px;
-  margin-bottom: 18px;
-}
-
-.definition-text strong {
   color: var(--ink);
-}
-
-.definition-quote {
-  border-left: 3px solid var(--orange);
-  padding: 19px 24px;
-  background: white;
-  margin-top: 25px;
-  font-family: var(--serif);
-  font-size: 20px;
-  line-height: 1.6;
-}
-
-.definition-quote small {
-  display: block;
-  font-family: var(--sans);
-  font-size: 10px;
-  letter-spacing: 1px;
-  color: var(--muted);
-  margin-top: 10px;
-}
-
-.definition-panel {
-  background: #ece9e0;
-  padding: 26px;
-  border: 1px solid #e0ddd4;
-}
-
-.panel-title {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
-  margin-bottom: 18px;
-}
-
-.matter-row {
-  display: grid;
-  grid-template-columns: 12px 1fr;
-  gap: 15px;
-  padding-block: 18px;
-  border-top: 1px solid #d5d2ca;
-}
-
-.matter-dot {
-  width: 10px;
-  height: 10px;
-  margin-top: 7px;
-  border-radius: 50%;
-}
-
-.dot-conductor { background: var(--orange); }
-.dot-semiconductor { background: var(--blue); }
-.dot-insulator { background: #849181; }
-
-.matter-row h3 {
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-
-.matter-row p {
-  color: #657184;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-/* BAND GAP */
-.band-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
-  align-items: stretch;
-}
-
-.band-card {
-  border: 1px solid #34465c;
-  background: #17283d;
-  padding: 26px;
-}
-
-.band-card h3 {
-  font-family: var(--serif);
-  font-size: 25px;
-  font-weight: 400;
-  margin-bottom: 8px;
-}
-
-.band-card > p {
-  color: #aab8c8;
-  font-size: 12px;
-  margin-bottom: 18px;
-}
-
-.band-canvas-wrap {
-  background: #101c2c;
-  border: 1px solid #394a60;
-  padding: 12px;
-}
-
-.band-canvas {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.band-caption {
-  color: #9dabbc;
-  font-size: 11px;
-  margin-top: 16px;
-}
-
-.band-caption strong {
-  color: #f0a079;
-}
-
-.formula {
-  font-family: Georgia, serif;
-  color: #f3b08b;
-  font-size: 22px;
-  margin: 14px 0;
-}
-
-.band-facts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: #34465c;
-  border: 1px solid #34465c;
-  margin-top: 25px;
-}
-
-.band-fact {
-  padding: 17px 12px;
-  background: #17283d;
-}
-
-.band-fact strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 400;
-  color: white;
-}
-
-.band-fact span {
-  font-size: 10px;
-  color: #aab8c8;
-}
-
-/* PROPERTIES */
-.property-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-}
-
-.property-card {
-  padding: 30px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background: white;
-  transition: background .2s;
-}
-
-.property-card:hover {
-  background: #faf8f2;
-}
-
-.property-index {
-  font-family: var(--serif);
-  font-size: 14px;
-  color: var(--orange);
-}
-
-.property-card h3 {
-  font-family: var(--serif);
-  font-size: 23px;
-  font-weight: 400;
-  margin: 20px 0 10px;
-}
-
-.property-card p {
-  color: #657184;
-  font-size: 12px;
-  line-height: 1.9;
-}
-
-.property-tag {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 5px 8px;
-  background: #f0eee7;
-  color: #59677a;
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* DOPING */
-.doping-intro {
-  max-width: 690px;
-  margin-bottom: 35px;
-}
-
-.doping-intro p {
-  color: #b4c0ce;
-  font-size: 14px;
-  margin-top: 17px;
-}
-
-.doping-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.doping-card {
-  background: #192b40;
-  border: 1px solid #354960;
-  padding: 28px;
-}
-
-.doping-label {
-  font-size: 10px;
-  color: var(--orange);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.doping-card h3 {
-  font-family: var(--serif);
-  font-size: 32px;
-  font-weight: 400;
-  margin: 10px 0;
-}
-
-.doping-card p {
-  color: #b1bfce;
-  font-size: 13px;
-}
-
-.doping-art {
-  display: block;
-  width: 100%;
-  margin: 22px 0;
-  border: 1px solid #354960;
-  background: #122136;
-}
-
-.doping-bottom {
-  padding-top: 18px;
-  border-top: 1px solid #3a4b60;
-  font-size: 12px;
-  color: #d8e0e8;
-}
-
-.doping-bottom strong {
-  color: #f1a17a;
-}
-
-/* INTERACTIVE GRAPH */
-.graph-layout {
-  display: grid;
-  grid-template-columns: .72fr 1.28fr;
-  gap: 45px;
-  align-items: start;
-}
-
-.graph-copy p {
-  color: #657184;
-  font-size: 13px;
-  margin-top: 17px;
-}
-
-.graph-controls {
-  margin-top: 25px;
-  background: #f0eee7;
-  padding: 18px;
-  border: 1px solid #e1ded5;
-}
-
-.graph-controls label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.graph-controls select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #cdd3d9;
-  background: white;
-  color: var(--ink);
-}
-
-.graph-controls button {
-  width: 100%;
-  margin-top: 12px;
-  padding: 11px;
-  border: 0;
-  background: var(--ink);
-  color: white;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.graph-frame {
-  background: white;
-  border: 1px solid var(--line);
-  padding: 24px;
-}
-
-.graph-title {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  align-items: start;
-  margin-bottom: 15px;
-}
-
-.graph-title h3 {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.graph-title span {
-  font-size: 9px;
-  color: var(--muted);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.graph-canvas {
-  width: 100%;
-  display: block;
-}
-
-.graph-note {
-  border-top: 1px solid var(--line);
-  padding-top: 15px;
-  margin-top: 15px;
-  color: var(--muted);
-  font-size: 11px;
-}
-
-/* APPLICATIONS */
-.application-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background: #dce1e5;
-  border: 1px solid #dce1e5;
-}
-
-.application {
-  background: white;
-  padding: 27px;
-  min-height: 220px;
-}
-
-.application-number {
-  color: var(--orange);
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
-.application h3 {
-  font-family: var(--serif);
-  font-size: 23px;
-  font-weight: 400;
-  margin: 24px 0 10px;
-}
-
-.application p {
-  color: #657184;
-  font-size: 12px;
-  line-height: 1.9;
-}
-
-.application .material {
-  display: inline-block;
-  margin-top: 15px;
-  color: #304e6b;
-  font-size: 10px;
-  font-weight: 700;
-}
-
-/* COMPARISON TABLE */
-.table-wrap {
-  overflow-x: auto;
-  border: 1px solid var(--line);
-  background: white;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  min-width: 620px;
-}
-
-th, td {
-  padding: 17px 20px;
-  border-bottom: 1px solid var(--line);
-  font-size: 12px;
-}
-
-th {
-  background: var(--ink);
-  color: white;
-  text-transform: uppercase;
-  font-size: 10px;
-  letter-spacing: 1px;
-  font-weight: 700;
-}
-
-td {
-  color: #59677a;
-}
-
-td:first-child {
-  color: var(--ink);
-  font-weight: 700;
-}
-
-tr:last-child td {
-  border-bottom: 0;
-}
-
-/* FAQ */
-.faq-list {
-  border-top: 1px solid var(--line);
-}
-
-.faq-item {
-  border-bottom: 1px solid var(--line);
-}
-
-.faq-item summary {
-  list-style: none;
-  padding: 21px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  cursor: pointer;
-  font-family: var(--serif);
-  font-size: 20px;
-}
-
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-item summary::after {
-  content: "+";
-  font-family: var(--sans);
-  font-size: 23px;
-  color: var(--orange);
-}
-
-.faq-item[open] summary::after {
-  content: "−";
-}
-
-.faq-answer {
-  padding: 0 35px 22px 0;
-  max-width: 800px;
-  color: #657184;
-  font-size: 13px;
-}
-
-/* REFERENCES */
-.references {
-  background: #ebe8df;
-  padding: 27px;
-  border: 1px solid #dedbd2;
-}
-
-.references h3 {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 400;
-  margin-bottom: 15px;
-}
-
-.references ol {
-  padding-left: 20px;
-  color: #5d6979;
-  font-size: 12px;
-}
-
-.references li {
-  padding: 6px 0;
-}
-
-.references a {
-  color: #285b83;
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
-/* FOOTER */
-.site-footer {
-  background: #0d1725;
-  color: white;
-  padding-block: 42px;
+a:hover {
+  color: var(--accent);
 }
 
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
+/* Layout */
+.container {
+  max-width: 900px; /* Narrower, like a printed page */
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.footer-title {
+/* Header / Masthead */
+.masthead {
+  border-bottom: 3px double var(--ink);
+  padding: 2rem 0 1rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.masthead h1 {
+  font-size: 1.2rem;
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+}
+
+.masthead nav {
+  margin-top: 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.masthead nav a {
+  text-decoration: none;
+  margin: 0 1rem;
+  color: var(--muted);
+}
+
+.masthead nav a:hover {
+  color: var(--ink);
+}
+
+/* Article Head */
+.article-head {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.article-head .category {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.article-head .abstract {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  column-count: 2;
+  column-gap: 2rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+
+/* Sections */
+section {
+  margin-bottom: 4rem;
+}
+
+.section-meta {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+/* Figures */
+figure {
+  margin: 2.5rem 0;
+  border: 1px solid var(--rule);
+  padding: 1.5rem;
+  background: #fff;
+}
+
+figcaption {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  line-height: 1.4;
+}
+
+figcaption strong {
+  color: var(--ink);
+}
+
+/* Inline Elements */
+.dropcap::first-letter {
+  float: left;
+  font-size: 4.5rem;
+  line-height: 0.8;
+  padding-right: 0.5rem;
+  padding-top: 0.2rem;
+  font-weight: bold;
+}
+
+.marginalia {
+  float: right;
+  width: 250px;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 2px solid var(--ink);
+  padding-top: 0.5rem;
+}
+
+.formula {
   font-family: var(--serif);
-  font-size: 24px;
+  font-style: italic;
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: #f0ede6;
 }
 
-.footer-inner p {
-  font-size: 11px;
-  color: #9aa9bb;
-  margin-top: 5px;
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-family: var(--sans);
+  font-size: 0.9rem;
 }
 
-.footer-links {
+th {
+  text-align: left;
+  border-bottom: 2px solid var(--ink);
+  padding: 0.8rem 0.5rem;
+  font-weight: bold;
+}
+
+td {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.8rem 0.5rem;
+}
+
+/* Two-column layout for specific sections */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+/* Interactive Graph */
+.interactive-controls {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
 }
 
-.footer-links a {
-  font-size: 11px;
-  color: #c4cedb;
+select {
+  padding: 0.5rem;
+  font-family: var(--sans);
+  border: 1px solid var(--ink);
+  background: var(--paper);
 }
 
-.back-top {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 50;
-  background: var(--orange);
-  color: white;
-  width: 42px;
-  height: 42px;
-  border: 0;
-  font-size: 19px;
-  box-shadow: 0 5px 20px #14223822;
+/* FAQ */
+details {
+  border-bottom: 1px solid var(--rule);
+  padding: 1rem 0;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .main-nav {
-    gap: 13px;
-  }
-
-  .header-label {
-    display: none;
-  }
-
-  .hero-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
-
-  .definition-grid,
-  .graph-layout {
-    gap: 30px;
-  }
-
-  .property-grid,
-  .application-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .band-layout {
-    gap: 18px;
-  }
+summary {
+  font-family: var(--sans);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  list-style: none;
 }
 
-@media (max-width: 650px) {
-  .container {
-    width: min(100% - 32px, var(--max));
-  }
-
-  .header-inner {
-    min-height: 66px;
-    flex-wrap: wrap;
-    padding-block: 12px;
-  }
-
-  .main-nav {
-    order: 3;
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    gap: 20px;
-  }
-
-  .main-nav a {
-    white-space: nowrap;
-  }
-
-  .brand {
-    font-size: 11px;
-  }
-
-  .hero-inner {
-    grid-template-columns: 1fr;
-    padding-block: 56px 70px;
-    gap: 45px;
-  }
-
-  .hero h1 {
-    font-size: 55px;
-    letter-spacing: -2px;
-  }
-
-  .hero-visual {
-    margin-right: 12px;
-  }
-
-  .fact-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .fact {
-    padding: 20px 14px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .fact:nth-child(odd) {
-    border-left: 1px solid var(--line);
-  }
-
-  .section {
-    padding-block: 65px;
-  }
-
-  .section-top {
-    display: block;
-    margin-bottom: 30px;
-  }
-
-  .section-intro {
-    margin-top: 18px;
-  }
-
-  .definition-grid,
-  .band-layout,
-  .doping-grid,
-  .graph-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .property-grid,
-  .application-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .property-card {
-    padding: 24px;
-  }
-
-  .application {
-    min-height: auto;
-  }
-
-  .band-facts {
-    grid-template-columns: 1fr;
-  }
-
-  .graph-frame {
-    padding: 14px;
-  }
-
-  .footer-inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
+summary::-webkit-details-marker {
+  display: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+summary::before {
+  content: "→ ";
+  color: var(--accent);
+}
 
-  *, *::before, *::after {
-    transition-duration: 0.01ms !important;
-  }
+details[open] summary::before {
+  content: "↓ ";
+}
+
+details p {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--ink);
+  padding: 2rem 0;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  .article-head .abstract { column-count: 1; }
+  .marginalia { float: none; width: 100%; margin: 1.5rem 0; }
+  .split { grid-template-columns: 1fr; gap: 1.5rem; }
+  .masthead nav a { display: block; margin: 0.5rem 0; }
 }
 </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="#" class="brand" aria-label="Physics for All homepage">
-      <span class="brand-mark">Φ</span>
-      <span>PHYSICS FOR ALL<small>SCIENCE · MATERIALS · ENERGY</small></span>
-    </a>
-
-    <nav class="main-nav" aria-label="Main navigation">
+<div class="container">
+  
+  <header class="masthead">
+    <h1>Physics for All</h1>
+    <nav>
       <a href="#definition">Fundamentals</a>
-      <a href="#energy-bands">Energy bands</a>
+      <a href="#energy-bands">Energy Bands</a>
       <a href="#properties">Properties</a>
       <a href="#doping">Doping</a>
       <a href="#applications">Applications</a>
     </nav>
+  </header>
 
-    <span class="header-label">Materials science / 01</span>
-  </div>
-</header>
+  <main>
 
-<main>
+    <!-- ARTICLE HEAD -->
+    <header class="article-head">
+      <span class="category">Solid State Physics &middot; Vol. 1</span>
+      <h1>Inside the world of semiconductors.</h1>
+      <div class="abstract">
+        <p>From silicon chips to solar energy, semiconductors are the materials that make modern electronics possible. This article explores how their atomic structure, energy bands, and electrical behaviour control the flow of charge, and how engineers manipulate these properties to build the modern world.</p>
+      </div>
+    </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero-inner">
-    <div>
-      <div class="eyebrow">The physics of modern technology</div>
-
-      <h1>Inside the world of <em>semiconductors.</em></h1>
-
-      <p class="hero-copy">
-        From silicon chips to solar energy, semiconductors are the materials
-        that make modern electronics possible. Discover how their atomic
-        structure, energy bands and electrical behaviour control the flow of
-        charge.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#definition">Explore the science <span>↘</span></a>
-        <a class="btn btn-outline" href="#applications">Discover applications <span>→</span></a>
+    <!-- 01 DEFINITION -->
+    <section id="definition">
+      <div class="section-meta">01 — Fundamentals</div>
+      <h2>What is a semiconductor?</h2>
+      
+      <div class="marginalia">
+        <strong>Did you know?</strong><br>
+        Silicon is the second most abundant element in the Earth's crust (after oxygen), making it an incredibly cost-effective material for global electronics manufacturing.
       </div>
 
-      <p class="hero-note">A scientific introduction to semiconductor materials and devices.</p>
-    </div>
+      <p class="dropcap">A <strong>semiconductor</strong> is a material whose electrical properties arise from the behaviour of electrons and holes within its electronic energy bands. Common examples include silicon (Si), germanium (Ge) and gallium arsenide (GaAs).</p>
 
-    <div class="hero-visual">
-      <div class="visual-frame">
-        <div class="visual-heading">
-          <span>Atomic structure / Silicon</span>
-          <span>Si · Z = 14</span>
-        </div>
+      <p>Unlike metals, semiconductors generally have a finite energy gap between the valence band and the conduction band. Thermal energy, incident photons or electrical excitation can provide the energy needed to generate mobile charge carriers.</p>
 
-        <svg class="atom-art" viewBox="0 0 480 370" role="img" aria-label="Stylised silicon atomic lattice and electron structure">
-          <defs>
-            <radialGradient id="core">
-              <stop offset="0%" stop-color="#f4b58e"/>
-              <stop offset="100%" stop-color="#e47743"/>
-            </radialGradient>
-            <linearGradient id="bond" x1="0" x2="1">
-              <stop stop-color="#527eaa"/>
-              <stop offset="100%" stop-color="#8db5d9"/>
-            </linearGradient>
-          </defs>
+      <p>Their conductivity can be adjusted by changing temperature, introducing controlled impurities called dopants, applying an electric field or illuminating the material. These mechanisms are the foundation of semiconductor devices.</p>
 
-          <g stroke="url(#bond)" stroke-width="1.6" opacity=".8">
-            <path d="M240 185 L140 105 L240 45 L340 105 L240 185 L140 265 L240 325 L340 265 L240 185"/>
-            <path d="M140 105 L140 265 M340 105 L340 265 M140 105 L340 265 M340 105 L140 265"/>
-            <path d="M240 45 L140 265 M240 45 L340 265 M240 325 L140 105 M240 325 L340 105"/>
-            <path d="M240 185 L240 45 M240 185 L240 325"/>
-          </g>
-
-          <g fill="#7ca7d0" stroke="#b4d3ec" stroke-width="1.5">
-            <circle cx="240" cy="45" r="8"/>
-            <circle cx="140" cy="105" r="8"/>
-            <circle cx="340" cy="105" r="8"/>
-            <circle cx="140" cy="265" r="8"/>
-            <circle cx="340" cy="265" r="8"/>
-            <circle cx="240" cy="325" r="8"/>
-          </g>
-
-          <circle cx="240" cy="185" r="27" fill="url(#core)"/>
-          <circle cx="240" cy="185" r="39" fill="none" stroke="#e47743" stroke-width="1" opacity=".5"/>
-
-          <g fill="#f4b58e">
-            <circle cx="195" cy="143" r="4"/>
-            <circle cx="285" cy="143" r="4"/>
-            <circle cx="195" cy="227" r="4"/>
-            <circle cx="285" cy="227" r="4"/>
-            <circle cx="240" cy="108" r="4"/>
-            <circle cx="240" cy="262" r="4"/>
-          </g>
-
-          <g fill="#c7d3e0" font-family="Arial, sans-serif" font-size="11">
-            <text x="254" y="188">Si</text>
-            <text x="95" y="90">Covalent</text>
-            <text x="95" y="103">bond</text>
-            <text x="355" y="95">Electron</text>
-            <text x="355" y="108">sharing</text>
-            <text x="253" y="29">Silicon atom</text>
-          </g>
-
-          <g stroke="#e47743" stroke-width="1" fill="none" opacity=".9">
-            <path d="M250 34 L250 20 L330 20"/>
-            <path d="M355 113 L382 130 L424 130"/>
-            <path d="M120 111 L70 135 L35 135"/>
-          </g>
-        </svg>
-
-        <div class="visual-footer">
-          <div>
-            <strong>4</strong>
-            <small>Valence electrons per Si atom</small>
-          </div>
-          <div>
-            <strong>1.12 eV</strong>
-            <small>Approximate Si band gap at 300 K</small>
-          </div>
-        </div>
-      </div>
-      <div class="hero-index">01 / 06</div>
-    </div>
-  </div>
-</section>
-
-<!-- FACT STRIP -->
-<section class="fact-strip" aria-label="Semiconductor facts">
-  <div class="container fact-grid">
-    <div class="fact">
-      <strong>Si</strong>
-      <span>Most widely used chip material</span>
-    </div>
-    <div class="fact">
-      <strong>1.12 eV</strong>
-      <span>Silicon band gap at room temperature</span>
-    </div>
-    <div class="fact">
-      <strong>n / p</strong>
-      <span>Two principal doping types</span>
-    </div>
-    <div class="fact">
-      <strong>Light → Charge</strong>
-      <span>Principle behind photovoltaics</span>
-    </div>
-  </div>
-</section>
-
-<!-- 01 DEFINITION -->
-<section class="section" id="definition">
-  <div class="container">
-    <div class="section-top">
-      <div>
-        <div class="section-number">01 — FUNDAMENTALS</div>
-        <h2>What is a semiconductor?</h2>
-      </div>
-      <p class="section-intro">
-        Its electrical conductivity lies between that of a conductor and an
-        insulator, but its most important feature is that conductivity can be
-        deliberately controlled.
-      </p>
-    </div>
-
-    <div class="definition-grid">
-      <div class="definition-text">
-        <p>
-          A <strong>semiconductor</strong> is a material whose electrical
-          properties arise from the behaviour of electrons and holes within
-          its electronic energy bands. Common examples include silicon (Si),
-          germanium (Ge) and gallium arsenide (GaAs).
-        </p>
-
-        <p>
-          Unlike metals, semiconductors generally have a finite energy gap
-          between the valence band and the conduction band. Thermal energy,
-          incident photons or electrical excitation can provide the energy
-          needed to generate mobile charge carriers.
-        </p>
-
-        <p>
-          Their conductivity can be adjusted by changing temperature,
-          introducing controlled impurities called dopants, applying an
-          electric field or illuminating the material. These mechanisms are
-          the foundation of semiconductor devices.
-        </p>
-
-        <div class="definition-quote">
-          “The key is not simply conducting electricity, but controlling how
-          charge moves through a material.”
-          <small>THE CENTRAL IDEA OF SEMICONDUCTOR PHYSICS</small>
-        </div>
+      <div class="formula">
+        "The key is not simply conducting electricity, but controlling how charge moves through a material."
       </div>
 
-      <aside class="definition-panel">
-        <div class="panel-title">Electrical behaviour / Comparison</div>
-
-        <div class="matter-row">
-          <span class="matter-dot dot-conductor"></span>
-          <div>
-            <h3>Conductors</h3>
-            <p>Many mobile charge carriers; bands may overlap or be partially occupied. Examples: copper and aluminium.</p>
-          </div>
+      <div class="split">
+        <div>
+          <h3>Conductors</h3>
+          <p>Many mobile charge carriers; bands may overlap or be partially occupied. Examples: copper and aluminium.</p>
         </div>
-
-        <div class="matter-row">
-          <span class="matter-dot dot-semiconductor"></span>
-          <div>
-            <h3>Semiconductors</h3>
-            <p>A moderate band gap allows carrier concentration to be engineered. Examples: silicon and gallium arsenide.</p>
-          </div>
+        <div>
+          <h3>Insulators</h3>
+          <p>Typically have a large band gap and very low electrical conductivity under ordinary conditions. Examples: glass and many ceramics.</p>
         </div>
-
-        <div class="matter-row">
-          <span class="matter-dot dot-insulator"></span>
-          <div>
-            <h3>Insulators</h3>
-            <p>Typically have a large band gap and very low electrical conductivity under ordinary conditions. Examples: glass and many ceramics.</p>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- 02 ENERGY BANDS -->
-<section class="section section-dark" id="energy-bands">
-  <div class="container">
-    <div class="section-top">
-      <div>
-        <div class="section-number">02 — ELECTRONIC STRUCTURE</div>
-        <h2>Understanding the band gap.</h2>
       </div>
-      <p class="section-intro">
-        In solids, closely spaced atomic energy levels form bands. The
-        separation between occupied and mobile electronic states helps
-        determine how a material conducts electricity and interacts with light.
-      </p>
-    </div>
+    </section>
 
-    <div class="band-layout">
-      <article class="band-card">
-        <h3>Conduction and valence bands</h3>
-       
+    <!-- 02 ENERGY BANDS -->
+    <section id="energy-bands">
+      <div class="section-meta">02 — Electronic Structure</div>
+      <h2>Understanding the band gap.</h2>
+
+      <p>In solids, closely spaced atomic energy levels form bands. The separation between occupied and mobile electronic states helps determine how a material conducts electricity and interacts with light.</p>
+
+      <figure>
+        <canvas id="bandDiagram" width="800" height="300" style="width:100%; height:auto;"></canvas>
+        <figcaption><strong>Figure 1.</strong> A simplified representation of semiconductor energy levels. E<sub>g</sub> is the band-gap energy. An electron must acquire sufficient energy to move from the valence band to the conduction band, leaving behind a hole.</figcaption>
+      </figure>
+
+      <figure>
+        <canvas id="materialBands" width="800" height="250" style="width:100%; height:auto;"></canvas>
+        <figcaption><strong>Figure 2.</strong> Comparison of conductor, semiconductor and insulator energy bands. Conductors have available states at nearby energies. Semiconductors have a moderate gap, while insulators have a substantially larger gap.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 03 PROPERTIES -->
+    <section id="properties">
+      <div class="section-meta">03 — Material Characteristics</div>
+      <h2>Properties that define performance.</h2>
+      
+      <p>Device performance depends on the interplay of electronic structure, carrier transport, optical absorption and thermal behaviour.</p>
+
+      <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+        <li><strong>Electrical conductivity:</strong> Depends on both the concentration and mobility of electrons and holes.</li>
+        <li><strong>Energy band gap:</strong> Determines the minimum energy for band-to-band excitation.</li>
+        <li><strong>Light absorption:</strong> Photons with suitable energy can excite electrons across the gap.</li>
+        <li><strong>Temperature dependence:</strong> Heating a semiconductor generally increases its intrinsic carrier concentration.</li>
+        <li><strong>Electron and hole mobility:</strong> Describes carrier drift under an electric field.</li>
+        <li><strong>Junction formation:</strong> Combining p-type and n-type regions creates a p–n junction.</li>
+      </ul>
+    </section>
+
+    <!-- 04 DOPING -->
+    <section id="doping">
+      <div class="section-meta">04 — Control through Doping</div>
+      <h2>Engineering the charge carriers.</h2>
+
+      <p>Doping introduces small, controlled concentrations of impurity atoms into a semiconductor. The dopants change the carrier concentration without changing the basic identity of the host material.</p>
+
+      <div class="split">
+        <div>
+          <h3>n-type semiconductor</h3>
+          <p>Donor impurities provide electrons that can be excited into conducting states. In silicon, phosphorus is a common donor. <strong>Majority carriers: electrons.</strong></p>
+          <figure>
+            <svg viewBox="0 0 400 150" style="width:100%; display:block;">
+              <g stroke="#a0a0a0" stroke-width="1">
+                <path d="M50 30 L150 30 L250 30 L350 30 M50 75 L150 75 L250 75 L350 75 M50 120 L150 120 L250 120 L350 120"/>
+                <path d="M50 30 L50 75 L50 120 M150 30 L150 75 L150 120 M250 30 L250 75 L250 120 M350 30 L350 75 L350 120"/>
+              </g>
+              <g fill="#e0e0e0" stroke="#666" stroke-width="1">
+                <circle cx="50" cy="30" r="10"/><circle cx="150" cy="30" r="10"/><circle cx="250" cy="30" r="10"/><circle cx="350" cy="30" r="10"/>
+                <circle cx="50" cy="75" r="10"/><circle cx="150" cy="75" r="10"/><circle cx="350" cy="75" r="10"/>
+                <circle cx="50" cy="120" r="10"/><circle cx="150" cy="120" r="10"/><circle cx="250" cy="120" r="10"/><circle cx="350" cy="120" r="10"/>
+              </g>
+              <circle cx="250" cy="75" r="12" fill="#983b23" stroke="#1a1a1a" stroke-width="1"/>
+              <text x="250" y="79" font-family="Arial" font-size="10" fill="#fff" text-anchor="middle">P</text>
+              <circle cx="280" cy="55" r="4" fill="#1a1a1a"/>
+              <path d="M262 70 L275 58" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="2 2"/>
+            </svg>
+            <figcaption>Phosphorus (P) donor in a silicon lattice, contributing a free electron.</figcaption>
+          </figure>
+        </div>
+        
+        <div>
+          <h3>p-type semiconductor</h3>
+          <p>Acceptor impurities create available states that facilitate hole formation. In silicon, boron is a common acceptor. <strong>Majority carriers: holes.</strong></p>
+          <figure>
+            <svg viewBox="0 0 400 150" style="width:100%; display:block;">
+              <g stroke="#a0a0a0" stroke-width="1">
+                <path d="M50 30 L150 30 L250 30 L350 30 M50 75 L150 75 L250 75 L350 75 M50 120 L150 120 L250 120 L350 120"/>
+                <path d="M50 30 L50 75 L50 120 M150 30 L150 75 L150 120 M250 30 L250 75 L250 120 M350 30 L350 75 L350 120"/>
+              </g>
+              <g fill="#e0e0e0" stroke="#666" stroke-width="1">
+                <circle cx="50" cy="30" r="10"/><circle cx="150" cy="30" r="10"/><circle cx="250" cy="30" r="10"/><circle cx="350" cy="30" r="10"/>
+                <circle cx="50" cy="75" r="10"/><circle cx="150" cy="75" r="10"/><circle cx="350" cy="75" r="10"/>
+                <circle cx="50" cy="120" r="10"/><circle cx="150" cy="120" r="10"/><circle cx="250" cy="120" r="10"/><circle cx="350" cy="120" r="10"/>
+              </g>
+              <circle cx="250" cy="75" r="12" fill="#983b23" stroke="#1a1a1a" stroke-width="1"/>
+              <text x="250" y="79" font-family="Arial" font-size="10" fill="#fff" text-anchor="middle">B</text>
+              <circle cx="280" cy="55" r="5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+              <path d="M262 70 L275 58" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="2 2"/>
+            </svg>
+            <figcaption>Boron (B) acceptor in a silicon lattice, creating a mobile hole.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 GRAPH -->
+    <section id="temperature">
+      <div class="section-meta">05 — Interactive Physics</div>
+      <h2>Temperature and conductivity.</h2>
+      
+      <p>Thermal excitation creates electron–hole pairs. In an intrinsic semiconductor, the carrier concentration rises strongly with temperature, often dominating the effect of reduced carrier mobility. The intrinsic carrier concentration follows a relationship of the form:</p>
+      
+      <div class="formula">
+        n<sub>i</sub> ∝ T<sup>3/2</sup> exp(−E<sub>g</sub>/2k<sub>B</sub>T)
+      </div>
+
+      <figure>
+        <div class="interactive-controls">
+          <label for="materialSelect">Select material:</label>
+          <select id="materialSelect">
+            <option value="0.66">Germanium (Eg = 0.66 eV)</option>
+            <option value="1.12" selected>Silicon (Eg = 1.12 eV)</option>
+            <option value="1.42">Gallium arsenide (Eg = 1.42 eV)</option>
+          </select>
+        </div>
+        <canvas id="temperatureGraph" width="800" height="400" style="width:100%; height:auto;"></canvas>
+        <figcaption><strong>Figure 3.</strong> Relative intrinsic carrier concentration vs temperature. The graph is normalised to the model value at 300 K.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 06 APPLICATIONS & TABLE -->
+    <section id="applications">
+      <div class="section-meta">06 — Technology & Society</div>
+      <h2>Where semiconductors make a difference.</h2>
+      
+      <p>By controlling the flow of charge and the interaction of light with matter, semiconductor devices underpin energy, communication, computing and measurement.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Band gap</th>
+            <th>Type</th>
+            <th>Common Applications</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Silicon (Si)</td>
+            <td>1.12 eV</td>
+            <td>Indirect</td>
+            <td>Integrated circuits, solar cells</td>
+          </tr>
+          <tr>
+            <td>Germanium (Ge)</td>
+            <td>0.66 eV</td>
+            <td>Indirect</td>
+            <td>Infrared optics, detectors</td>
+          </tr>
+          <tr>
+            <td>Gallium arsenide (GaAs)</td>
+            <td>1.42 eV</td>
+            <td>Direct</td>
+            <td>Optoelectronics, RF devices</td>
+          </tr>
+          <tr>
+            <td>Gallium nitride (GaN)</td>
+            <td>3.4 eV</td>
+            <td>Direct</td>
+            <td>Blue LEDs, high-power electronics</td>
+          </tr>
+          <tr>
+            <td>Silicon carbide (SiC)</td>
+            <td>3.26 eV</td>
+            <td>Indirect</td>
+            <td>High-voltage power devices</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-meta">Reference</div>
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>Why is silicon widely used in electronics?</summary>
+        <p>Silicon is abundant, has a useful band gap, and forms a stable native oxide (SiO₂). Its mature manufacturing processes make it particularly suitable for integrated circuits and many photovoltaic devices.</p>
+      </details>
+
+      <details>
+        <summary>What is the difference between electrons and holes?</summary>
+        <p>An electron is a negatively charged carrier. A hole is the effective positive charge associated with a missing electron in an otherwise occupied electronic state. Both can contribute to electrical current.</p>
+      </details>
+
+      <details>
+        <summary>Why does semiconductor conductivity often increase with temperature?</summary>
+        <p>Higher temperature can generate more electron–hole pairs. In intrinsic semiconductors, this increase in carrier concentration often outweighs the reduction in mobility caused by increased lattice scattering.</p>
+      </details>
+
+      <details>
+        <summary>What is a p–n junction?</summary>
+        <p>It is the interface between p-type and n-type semiconductor regions. Carrier diffusion and recombination establish a depletion region and built-in electric potential. The junction's response to applied voltage is central to diodes, solar cells and many other devices.</p>
+      </details>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Physics for All &middot; Educational Resource</p>
+    <p>Text and figures adapted from standard solid-state physics literature.</p>
+  </footer>
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* =====================================================
+   CANVAS DRAWING (Retaining the functional physics logic)
+===================================================== */
+
+// 1. Band Diagram
+function drawBandDiagram() {
+  const canvas = document.getElementById("bandDiagram");
+  const ctx = canvas.getContext("2d");
+  const w = canvas.width;
+  const h = canvas.height;
+
+  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, w, h);
+
+  const left = 120;
+  const right = w - 40;
+  const conductionY = 70;
+  const valenceY = 200;
+
+  // Conduction band
+  ctx.fillStyle = "#e8e4db";
+  ctx.fillRect(left, 30, right - left, 60);
+  ctx.strokeStyle = "#1a1a1a";
+  ctx.lineWidth = 1;
+  ctx.strokeRect(left, 30, right - left, 60);
+  
+  // Valence band
+  ctx.fillStyle = "#e8e4db";
+  ctx.fillRect(left, valenceY, right - left, 60);
+  ctx.strokeRect(left, valenceY, right - left, 60);
+
+  // Text
+  ctx.fillStyle = "#1a1a1a";
+  ctx.font = "italic 16px Georgia";
+  ctx.fillText("Conduction band", left + 10, 65);
+  ctx.fillText("Valence band", left + 10, valenceY + 35);
+
+  // Gap arrow
+  ctx.strokeStyle = "#983b23";
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.moveTo(w - 60, 90);
+  ctx.lineTo(w - 60, valenceY);
+  ctx.moveTo(w - 65, 100);
+  ctx.lineTo(w - 60, 90);
+  ctx.lineTo(w - 55, 100);
+  ctx.moveTo(w - 65, valenceY - 10);
+  ctx.lineTo(w - 60, valenceY);
+  ctx.lineTo(w - 55, valenceY - 10);
+  ctx.stroke();
+
+  ctx.fillStyle = "#983b23";
+  ctx.font = "italic 18px Georgia";
+  ctx.fillText("E_g", w - 50, (90 + valenceY)/2 + 5);
+
+  // Electrons/holes
+  ctx.fillStyle = "#1a1a1a";
+  ctx.beginPath();
+  ctx.arc(left + 200, 50, 4, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.font = "14px Georgia";
+  ctx.fillText("e⁻", left + 210, 55);
+
+  ctx.beginPath();
+  ctx.arc(left + 200, valenceY + 40, 4, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.fillText("h⁺", left + 210, valenceY + 45);
+}
+
+// 2. Material Bands
+function drawMaterialBands() {
+  const canvas = document.getElementById("materialBands");
+  const ctx = canvas.getContext("2d");
+  const w = canvas.width;
+  const h = canvas.height;
+
+  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, w, h);
+
+  const panels = [
+    { x: 50, title: "Metal" },
+    { x: 320, title: "Semiconductor" },
+    { x: 590, title: "Insulator" }
+  ];
+
+  panels.forEach((p, i) => {
+    const pw = 160;
+    
+    ctx.fillStyle = "#1a1a1a";
+    ctx.font = "bold 14px Helvetica";
+    ctx.textAlign = "center";
+    ctx.fillText(p.title, p.x + pw/2, 30);
+
+    // Conduction
+    ctx.fillStyle = "#e8e4db";
+    ctx.fillRect(p.x, 50, pw, 40);
+    ctx.strokeStyle = "#1a1a1a";
+    ctx.strokeRect(p.x, 50, pw, 40);
+
+    if (i === 0) {
+      // Metal overlap
+      ctx.fillStyle = "#c9c4b9";
+      ctx.fillRect(p.x, 90, pw, 30);
+      ctx.strokeRect(p.x, 90, pw, 30);
+      ctx.fillStyle = "#1a1a1a";
+      ctx.font = "12px Georgia";
+      ctx.fillText("Overlap", p.x + pw/2, 110);
+    } else {
+      // Valence
+      ctx.fillStyle = "#e8e4db";
+      ctx.fillRect(p.x, 160, pw, 40);
+      ctx.strokeRect(p.x, 160, pw, 40);
+      
+      const gap = i === 1 ? 40 : 80;
+      // Gap line
+      ctx.beginPath();
+      ctx.moveTo(p.x + 10, 140);
+      ctx.lineTo(p.x + pw - 10, 140);
+      ctx.moveTo(p.x + 10, 150);
+      ctx.lineTo(p.x + pw - 10, 150);
+      ctx.strokeStyle = "#983b23";
+      ctx.stroke();
+
+      ctx.fillStyle = "#983b23";
+      ctx.font = "italic 14px Georgia";
+      ctx.fillText("E_g", p.x + pw/2, 130);
+    }
+    
+    // Labels
+    ctx.fillStyle = "#1a1a1a";
+    ctx.font = "12px Georgia";
+    ctx.fillText("Conduction", p.x + pw/2, 75);
+    ctx.fillText("Valence", p.x + pw/2, 185);
+  });
+}
+
+// 3. Temperature Graph
+function drawTemperatureGraph() {
+  const canvas = document.getElementById("temperatureGraph");
+  const ctx = canvas.getContext("2d");
+  const eg = Number(document.getElementById("materialSelect").value);
+
+  const w = canvas.width;
+  const h = canvas.height;
+  const margin = { left: 80, right: 40, top: 40, bottom: 60 };
+
+  const plotW = w - margin.left - margin.right;
+  const plotH = h - margin.top - margin.bottom;
+
+  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, w, h);
+
+  const Tmin = 200, Tmax = 600;
+  const ymin = -6, ymax = 6;
+
+  function model(T) {
+    const kB = 8.617333262e-5;
+    const ratio = Math.pow(T / 300, 1.5) * Math.exp((-eg / (2 * kB)) * (1 / T - 1 / 300));
+    return Math.log10(ratio);
+  }
+
+  function xScale(T) { return margin.left + ((T - Tmin) / (Tmax - Tmin)) * plotW; }
+  function yScale(logVal) { return margin.top + ((ymax - logVal) / (ymax - ymin)) * plotH; }
+
+  // Grid
+  ctx.strokeStyle = "#e8e4db";
+  ctx.lineWidth = 1;
+  ctx.fillStyle = "#6b6b6b";
+  ctx.font = "11px Helvetica";
+
+  for (let v = ymin; v <= ymax; v += 2) {
+    const y = yScale(v);
+    ctx.beginPath(); ctx.moveTo(margin.left, y); ctx.lineTo(w - margin.right, y); ctx.stroke();
+    ctx.textAlign = "right";
+    ctx.fillText(v.toString(), margin.left - 10, y + 4);
+  }
+
+  for (let T = 200; T <= 600; T += 100) {
+    const x = xScale(T);
+    ctx.beginPath(); ctx.moveTo(x, margin.top); ctx.lineTo(x, h - margin.bottom); ctx.stroke();
+    ctx.textAlign = "center";
+    ctx.fillText(T.toString(), x, h - margin.bottom + 20);
+  }
+
+  // Curve
+  ctx.beginPath();
+  ctx.strokeStyle = "#983b23";
+  ctx.lineWidth = 2;
+  for (let T = Tmin; T <= Tmax; T += 2) {
+    const x = xScale(T);
+    const y = yScale(Math.max(ymin, Math.min(ymax, model(T))));
+    if (T === Tmin) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+
+  // Normalization point
+  const x300 = xScale(300), y300 = yScale(0);
+  ctx.fillStyle = "#1a1a1a";
+  ctx.beginPath(); ctx.arc(x300, y300, 4, 0, Math.PI * 2); ctx.fill();
+
+  // Axis labels
+  ctx.fillStyle = "#1a1a1a";
+  ctx.font = "italic 13px Georgia";
+  ctx.textAlign = "center";
+  ctx.fillText("Temperature (K)", margin.left + plotW / 2, h - 15);
+
+  ctx.save();
+  ctx.translate(25, margin.top + plotH / 2);
+  ctx.rotate(-Math.PI / 2);
+  ctx.fillText("log₁₀ (relative concentration)", 0, 0);
+  ctx.restore();
+}
+
+// Init
+drawBandDiagram();
+drawMaterialBands();
+drawTemperatureGraph();
+
+document.getElementById("materialSelect").addEventListener("change", drawTemperatureGraph);
+window.addEventListener("resize", () => {
+  drawBandDiagram();
+  drawMaterialBands();
+  drawTemperatureGraph();
+});
+</script>
+
+</body>
+</html>
